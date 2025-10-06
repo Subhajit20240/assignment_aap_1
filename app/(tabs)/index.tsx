@@ -1,98 +1,233 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+import { Image } from "expo-image";
+import { StyleSheet, View, Text, ScrollView } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import Feather from "@expo/vector-icons/Feather";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import Fontisto from "@expo/vector-icons/Fontisto";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import EvilIcons from "@expo/vector-icons/EvilIcons";
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.view1}>
+        <View>
+          <AntDesign name="menu" size={24} color="white" style={styles.view2} />
+        </View>
+        <View style={styles.view4}>
+          <Fontisto style={styles.view2} name="wifi-logo" size={24}color="black"  />
+          <Text style={styles.view2}>TheSubhajit</Text>
+        </View>
+        <View style={styles.view3}>
+          <Feather style={styles.view2} name="search" size={24} color="black" />
+          <Ionicons  style={styles.view2}  name="bag-handle-outline"  size={24}  color="black"
+          />
+        </View>
+      </View>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      <ScrollView  style={styles.bodyScroll}  nestedScrollEnabled  showsVerticalScrollIndicator={false}  >
+        <View style={styles.view5}>
+          <Image source={require("../../assets/images/assign.jpg")} style={styles.image} />
+        </View>
+
+        <View style={styles.view6}>
+          <Text style={styles.view7}>Popular Catogories</Text>
+        </View>
+
+        <ScrollView  horizontal  showsHorizontalScrollIndicator={false}  contentContainerStyle={styles.categoriesContent}>
+          <View style={styles.view8}>
+            <MaterialCommunityIcons name="sofa-outline"  size={24}  color="black"/>
+            <Text style={styles.view9}>Sofa</Text>
+          </View>
+          <View style={styles.view8}>
+            <FontAwesome name="tv" size={24} color="black" />
+            <Text style={styles.view9}>TV UNIT</Text>
+          </View>
+          <View style={styles.view8}>
+            <FontAwesome6 name="chair" size={24} color="black" />
+            <Text style={styles.view9}>Chair</Text>
+          </View>
+          <View style={styles.view8}>
+            <Ionicons name="bed-outline" size={24} color="black" />
+            <Text style={styles.view9}>Bed</Text>
+          </View>
+          <View style={styles.view8}>
+            <Fontisto name="tablet" size={24} color="black" />
+            <Text style={styles.view9}>Tablet</Text>
+          </View>
+          <View style={styles.view8}>
+            <FontAwesome name="laptop" size={24} color="black" />
+            <Text style={styles.view9}>Laptop</Text>
+          </View>
+          <View style={styles.view8}>
+            <MaterialCommunityIcons  name="ceiling-fan"  size={24}  color="black"/>
+            <Text style={styles.view9}>Ceiling Fan</Text>
+          </View>
+          <View style={styles.view8}>
+            <AntDesign name="bulb" size={24} color="black" />
+            <Text style={styles.view9}>Bulb</Text>
+          </View>
+        </ScrollView>
+
+        <View style={styles.view10}>
+          <Text style={styles.view7}>New Arrivals</Text>
+          <View style={styles.view11}>
+            <Text>View All</Text>
+            <EvilIcons name="arrow-right" size={24} color="black" />
+          </View>
+        </View>
+        <View style={styles.gridContent}>
+          <View style={styles.gridRow}>
+            <View style={styles.gridItem}>
+              <Image source={require("../../assets/images/assign.jpg")} style={styles.gridImage} />
+            </View>
+            <View style={styles.gridItem}>
+              <Image  source={require("../../assets/images/assign.jpg")} style={styles.gridImage}  />
+            </View>
+          </View>
+          <View style={styles.gridRow}>
+            <View style={styles.gridItem}>
+              <Image   source={require("../../assets/images/assign.jpg")}  style={styles.gridImage} />
+            </View>
+            <View style={styles.gridItem}>
+              <Image source={require("../../assets/images/assign.jpg")} style={styles.gridImage} />
+            </View>
+          </View>
+          <View style={styles.gridRow}>
+            <View style={styles.gridItem}>
+              <Image  source={require("../../assets/images/assign.jpg")}  style={styles.gridImage} />
+            </View>
+            <View style={styles.gridItem}>
+              <Image  source={require("../../assets/images/assign.jpg")}     style={styles.gridImage}   />
+            </View>
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  safeArea: {
+    flex: 1,
+    backgroundColor: "white",
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  view1: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "black",
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  view2: {
+    color: "white",
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 20,
+  },
+  view3: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "black",
+  },
+  view4: {
+    flexDirection: "row",
+    // justifyContent:'center',
+    alignItems: "center",
+    backgroundColor: "black",
+    justifyContent: "space-evenly",
+  },
+  view5: {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "red",
+  },
+  image: {
+    width: "100%",
+    height: 300,
+  },
+  view6: {
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    // backgroundColor:'blue',
+  },
+  view7: {
+    // backgroundColor:'blue',
+    marginTop: 20,
+    alignSelf: "flex-start",
+    textAlign: "left",
+    marginLeft: 20,
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "black",
+  },
+  categoriesContent: {
+    flexDirection: "row",
+    paddingHorizontal: 16,
+    gap: 10,
+    marginTop:20
+  },
+  view8: {
+    // paddingVertical:12,
+    paddingHorizontal: 16,
+    // marginRight:12,
+    borderRadius: 8,
+    alignItems: "center",
+    justifyContent: "center",
+    // backgroundColor:'white'
+  },
+  view9: {
+    color: "black",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginTop: 10,
+  },
+  view10: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 0,
+    // backgroundColor:'black',
+  },
+  bodyScroll: {
+    flex: 1,
+  },
+  view11: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 20,
+    marginRight: 10,
+    // backgroundColor:'black',
+  },
+  gridContent: {
+    paddingHorizontal: 16,
+    paddingBottom: 24,
+    marginTop:20
+  },
+  gridScroll: {
+    flex: 1,
+  },
+  gridRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 12,
+  },
+  gridItem: {
+    width: "48%",
+    borderRadius: 8,
+    overflow: "hidden",
+    backgroundColor: "white",
+  },
+  gridImage: {
+    width: "100%",
+    height: 150,
   },
 });
