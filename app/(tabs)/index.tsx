@@ -1,5 +1,5 @@
 import { Image } from "expo-image";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
+import {  StyleSheet, View, Text, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from "@expo/vector-icons/Feather";
@@ -28,7 +28,7 @@ export default function HomeScreen() {
         </View>
       </View>
 
-      <ScrollView  style={styles.bodyScroll}  nestedScrollEnabled  showsVerticalScrollIndicator={false}  >
+      <ScrollView  style={styles.bodyScroll}    showsVerticalScrollIndicator={false}  >
         <View style={styles.view5}>
           <Image source={require("../../assets/images/assign.jpg")} style={styles.image} />
         </View>
